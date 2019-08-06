@@ -1,25 +1,26 @@
 package edu.mum.studentcrud.domin;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.annotation.Generated;
+import javax.persistence.*;
+
 @Entity
 public class Student {
     @Id
     @Column(name="stud_id")
-    String studentId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+ Integer studentId;
     @Column(name="stud_num")
     String studentNumber;
     @Column(name="first_name")
-    String firstname;
+    String firstName;
     @Column(name="middle_name")
-    String middlename;
+    String middleName;
     @Column(name="last_name")
-    String lastname;
+    String lastName;
     @Column(name="stud_gpa")
     double cgpa;
     @Column(name="enrollment_Date")
-    String enrolnmentDate;
+    String enrollmentDate;
     @Column(name="is_International")
     String isInternational;
 
@@ -27,22 +28,22 @@ public class Student {
 
     }
 
-    public Student(String studentId, String studentNumber, String firstname, String middlename, String lastname, double cgpa, String enrolnmentDate, String isInternational) {
-        this.studentId = studentId;
+    public Student( String studentNumber, String firstname, String middlename, String lastname, double cgpa, String enrollmentDate, String isInternational) {
+
         this.studentNumber = studentNumber;
-        this.firstname = firstname;
-        this.middlename = middlename;
-        this.lastname = lastname;
+        this.firstName = firstname;
+        this.middleName = middlename;
+        this.lastName = lastname;
         this.cgpa = cgpa;
-        this.enrolnmentDate = enrolnmentDate;
+        this.enrollmentDate = enrollmentDate;
         this.isInternational = isInternational;
     }
 
-    public String getStudentId() {
+    public Integer getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(String studentId) {
+    public void setStudentId(Integer studentId) {
         this.studentId = studentId;
     }
 
@@ -54,28 +55,28 @@ public class Student {
         this.studentNumber = studentNumber;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getMiddlename() {
-        return middlename;
+    public String getMiddleName() {
+        return middleName;
     }
 
-    public void setMiddlename(String middlename) {
-        this.middlename = middlename;
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public double getCgpa() {
@@ -86,12 +87,12 @@ public class Student {
         this.cgpa = cgpa;
     }
 
-    public String getEnrolnmentDate() {
-        return enrolnmentDate;
+    public String getEnrollmentDate() {
+        return enrollmentDate;
     }
 
-    public void setEnrolnmentDate(String enrolnmentDate) {
-        this.enrolnmentDate = enrolnmentDate;
+    public void setEnrollmentDate(String enrollmentDate) {
+        this.enrollmentDate = enrollmentDate;
     }
 
     public String getIsInternational() {
@@ -100,5 +101,19 @@ public class Student {
 
     public void setIsInternational(String isInternational) {
         this.isInternational = isInternational;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentId=" + studentId +
+                ", studentNumber='" + studentNumber + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", cgpa=" + cgpa +
+                ", enrollmentDate='" + enrollmentDate + '\'' +
+                ", isInternational='" + isInternational + '\'' +
+                '}';
     }
 }

@@ -9,9 +9,9 @@ import java.util.List;
 public interface StudentService {
     public List<Student> findAll();
 
-    public Student findById(String theId);
+    public Student findById(Integer theId);
 
-    public void deleteById(String stuId);
+    public void deleteById(Integer stuId);
     public void save(Student stud);
 
 

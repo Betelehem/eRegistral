@@ -20,15 +20,17 @@ public class StudentServiceImpl implements StudentService {
 
 
     @Override
-    public void deleteById(String stuId) {
+    public void deleteById(Integer stuId) {
 
-        studentRepository.deleteById(stuId);
+        studentRepository.delete(studentRepository.getOne(stuId));
     }
 
     @Override
-    public Student findById(String theId) {
+    public Student findById(Integer theId) {
         return studentRepository.findById(theId).get();
     }
+
+
 
 
 
